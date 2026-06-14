@@ -15,7 +15,6 @@ DBNAME="$(basename $POSTGRES_URI)"
 
 FILENAME="$DBNAME.$(date -Iseconds).sql"
 
+cd "$DATA_DIR"
+
 pg_dump "$POSTGRES_URI" > "$FILENAME"
-
-mv "$FILENAME" "$DATA_DIR"
-
